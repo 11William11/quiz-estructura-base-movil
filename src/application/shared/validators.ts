@@ -9,6 +9,3 @@ export const isDigitsOnly = (value: string): boolean => DIGITS_PATTERN.test(valu
 
 export const isNonNegativeNumber = (value: number): boolean =>
   Number.isFinite(value) && value >= 0;
-
-export const isNonNegativeInteger = (value: number): boolean =>
-  Number.isInteger(value) && value >= 0;

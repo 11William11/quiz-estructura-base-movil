@@ -11,8 +11,8 @@ export class SqliteProductRepository implements ProductRepository {
 
   async save(product: Product): Promise<void> {
     await this.database.run(
-      'INSERT INTO products (name, description, price, stock) VALUES (?, ?, ?, ?);',
-      [product.name, product.description || null, product.price, product.stock],
+      'INSERT INTO products (name, price) VALUES (?, ?);',
+      [product.name, product.price],
     );
   }
 }

@@ -11,9 +11,8 @@ export class SqlitePersonRepository implements PersonRepository {
 
   async save(person: Person): Promise<void> {
     await this.database.run(
-      `INSERT INTO persons (document_number, first_name, last_name, phone, birth_date)
-       VALUES (?, ?, ?, ?, ?);`,
-      [person.documentNumber, person.firstName, person.lastName, person.phone || null, person.birthDate || null],
+      'INSERT INTO persons (document_number, first_name, last_name) VALUES (?, ?, ?);',
+      [person.documentNumber, person.firstName, person.lastName],
     );
   }
 
