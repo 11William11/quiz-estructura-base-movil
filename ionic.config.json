@@ -1,0 +1,7 @@
+{
+  "name": "quiz-estructura-base-movil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
