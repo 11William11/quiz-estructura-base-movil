@@ -3,7 +3,8 @@ import {
   IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { personCircleOutline, pricetagOutline } from 'ionicons/icons';
+import { peopleOutline, personCircleOutline, pricetagOutline } from 'ionicons/icons';
+import RegisterPersonPage from './persons/RegisterPersonPage';
 import RegisterProductPage from './products/RegisterProductPage';
 import RegisterUserPage from './users/RegisterUserPage';
 
@@ -34,6 +35,7 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           <Route path="/users" element={<RegisterUserPage />} />
           <Route path="/products" element={<RegisterProductPage />} />
+          <Route path="/persons" element={<RegisterPersonPage />} />
           <Route path="/" element={<Navigate to="/users" replace />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -44,6 +46,10 @@ const App: React.FC = () => (
           <IonTabButton tab="products" href="/products">
             <IonIcon icon={pricetagOutline} />
             <IonLabel>Productos</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="persons" href="/persons">
+            <IonIcon icon={peopleOutline} />
+            <IonLabel>Personas</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
