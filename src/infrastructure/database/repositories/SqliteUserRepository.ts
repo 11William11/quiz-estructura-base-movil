@@ -11,8 +11,8 @@ export class SqliteUserRepository implements UserRepository {
 
   async save(user: User): Promise<void> {
     await this.database.run(
-      'INSERT INTO users (full_name, email, password_hash) VALUES (?, ?, ?);',
-      [user.fullName, user.email, user.passwordHash],
+      'INSERT INTO users (full_name, email) VALUES (?, ?);',
+      [user.fullName, user.email],
     );
   }
 
